@@ -62,6 +62,8 @@ server.delete("/api/notes/delete/:id", async (req, res) => {
   }
 });
 
-server.listen("5000", () => {
-  console.log("Server is listening on port 5000");
+const port = process.env.PORT || "5000";
+
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

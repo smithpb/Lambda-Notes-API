@@ -14,7 +14,9 @@ server.get("/api/notes/get/all", async (req, res) => {
   try {
     const notes = await Notes.getAll();
     res.status(200).json(notes);
-  } catch (e) {}
+  } catch (e) {
+    res.status(500).json({ message: "Something went wrong with the server" });
+  }
 });
 
 server.get("/api/notes/get/:id", async (req, res) => {
